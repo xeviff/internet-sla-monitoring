@@ -25,6 +25,7 @@ services:
     links:
       - ping:ping
       - speedtest:speedtest
+      - portschecker:portschecker
     networks:
       - back-tier
 
@@ -87,5 +88,21 @@ services:
       - '--path.sysfs=/host/sys'
       - --collector.filesystem.ignored-mount-points
       - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
+    networks:
+      - back-tier
+      
+  portschecker:
+    tty: true
+    stdin_open: true
+    image: xeviff/python-prometheus-canyouseeme
+    volumes:
+      - ./pyPrometheusPortChecker/config:/config
+    depends_on:
+      - speedtest
+    expose:
+      - 9116
+    ports:
+      - 9116:9116
+    restart: always
     networks:
       - back-tier
