@@ -1,13 +1,12 @@
 # Internet Service Level Agreement Monitoring Docker Stack with Prometheus, Grafana and a small python ports checker.
 
-> To learn more about the python ports checker use, please visit this page: https://github.com/xeviff/pyOpenPortsChecker4Prometheus  
+> To learn more about the python ports checker use, please visit the related python project [here](https://github.com/xeviff/pyOpenPortsChecker4Prometheus) 
 
 Stand-up a Docker [Prometheus](http://prometheus.io/) stack containing Prometheus, Grafana with [blackbox-exporter](https://github.com/prometheus/blackbox_exporter), and [speedtest-exporter](https://github.com/MiguelNdeCarvalho/speedtest-exporter) to collect and graph home Internet reliability and throughput.
 
 ## This is a fork
 
-Please, be aware this is an improvement from the following forked project, so I encourage you to get it as a first reference:
-https://github.com/geerlingguy/internet-monitoring
+Please, be aware this is an improvement based on an already existing project, so if you are interested on more details about its components, then I encourage you to take as first reference the original project [here](https://github.com/geerlingguy/internet-monitoring)
 
 ## Configurations
 
@@ -23,12 +22,7 @@ But it's pretty easy, you (as grafana's administrator) edit the panels and chang
 
 This is how it looks like in my NAS:
 
-<center><img src="images/dashboard.png" width="4600" heighth="500"></center>
+<center><img src="images/dashboard.jpeg" width="4600" heighth="500"></center>
 
-Please, don't attack my open ports :sweat_smile:
-
+<br>
 The interesting thing is you can adjust the time visibility and get its average, for example the last 24h or even last week stats, etc.
-
-## Troubleshooting
-
-If any error don't hesitate to open an Issue and I'll check if I mess up during the merge :trollface:
